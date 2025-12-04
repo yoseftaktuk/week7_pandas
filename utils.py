@@ -34,16 +34,13 @@ sorted_df = df.sort_values(by='total_amount',ascending=False)
 df['high_value_order'] = l
 #שאלה 6
     
-# print(df['country'])
+
 group = df.groupby('country')["rating"].transform('mean')
 group.mean()
 
 df['rating'] = group
 print(df)
-# print(df['high_value_order'])
-# print(df['rating'])
-# print(df.info()) 
-# print(df['total_amount'])
+
 
 #שאלה 7
 filtered_values = np.where((df['total_amount'] > 1000) & (df['rating'] > 4.5))
